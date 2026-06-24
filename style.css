@@ -294,7 +294,7 @@ footer a {
 footer a:hover {
     color: #fff;
 }
-/* Logo más controlado */
+/* Logo */
 .logo-container {
     position: absolute;
     left: 20px;
@@ -302,7 +302,7 @@ footer a:hover {
 }
 
 .logo-img {
-    height: clamp(40px, 8vw, 80px); /* antes era demasiado grande */
+    height: 150px; 
     width: auto;
     filter: drop-shadow(0 0 10px #0ff);
 }
