@@ -1,0 +1,397 @@
+/* Fuente gamer futurista */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+/* Estilo general */
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top, #0d0d0d, #000);
+    color: #fff;
+}
+
+/* Header */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg, #ff0080, #7928ca, #00f0ff);
+    color: white;
+    padding: 15px 30px;
+    position: relative;
+    box-shadow: 0 0 20px #00f0ff;
+}
+
+nav a {
+    margin: 0 10px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav a.active {
+    border-bottom: 2px solid #ff0080;
+}
+
+nav a:hover {
+    color: #0ff;
+}
+
+/* Hero gamer */
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(to right, #ff0080, #7928ca, #00f0ff);
+    color: white;
+    box-shadow: 0 0 25px #ff0080;
+}
+
+.hero button {
+    padding: 14px 30px;
+    margin-top: 20px;
+    background: linear-gradient(90deg, #ff0080, #00f0ff);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.hero button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00f0ff;
+}
+
+/* Features gamer */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+}
+
+.feature {
+    background: rgba(20,20,20,0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px #7928ca;
+    width: 30%;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s;
+}
+
+.feature:hover {
+    transform: scale(1.05);
+}
+
+/* Carrusel */
+.carousel {
+    text-align: center;
+    margin: 50px auto;
+    max-width: 900px;
+}
+
+.carousel h4 {
+    color: #0ff;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00f;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px;
+    scrollbar-width: none;
+}
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.slide {
+    flex: 0 0 auto;
+    background: rgba(20,20,20,0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ff0080;
+    width: 180px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.slide img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.slide p {
+    padding: 10px;
+    font-weight: bold;
+    color: #fff;
+}
+
+.slide:hover {
+    transform: scale(1.05);
+}
+
+/* Formulario gamer */
+.formulario {
+    max-width: 500px;
+    margin: 40px auto;
+    background: rgba(20,20,20,0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00f0ff;
+    color: #fff;
+}
+/* Contenedor del juego */
+.game-container {
+    max-width: 900px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Configuración */
+.configuracion {
+    background: rgba(20,20,20,0.9);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ff0080;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+/* Botón de inicio gamer */
+.start-btn {
+    margin-top: 15px;
+    padding: 14px 30px;
+    background: linear-gradient(90deg, #ff0080, #00f0ff);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00f0ff;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.start-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff0080;
+}
+
+/* Caja del quiz */
+.quiz-box {
+    background: rgba(20,20,20,0.95);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px #00f0ff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Barra de estado */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #0ff;
+}
+
+/* Pregunta */
+.pregunta-card {
+    background: rgba(30,30,30,0.9);
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px #7928ca;
+}
+
+.pregunta-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #ff0080;
+}
+
+/* Botones de opciones */
+.opciones button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 12px;
+    background: linear-gradient(90deg, #ff0080, #7928ca);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.opciones button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #ff0080;
+}
+
+.opciones button:disabled {
+    background: #555;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+/* Resultado */
+.resultado {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 15px;
+    text-shadow: 0 0 10px #00f0ff;
+}
+
+/* Intro gamer */
+.intro {
+    background: rgba(20,20,20,0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #ff0080;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #fff;
+}
+
+.intro h2 {
+    color: #0ff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px #00f;
+}
+
+.intro p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Footer gamer */
+footer {
+    background: #111;
+    color: #aaa;
+    text-align: center;
+    padding: 15px;
+    margin-top: 40px;
+    border-top: 2px solid #ff0080;
+}
+
+footer a {
+    color: #0ff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #fff;
+}
+/* Logo más controlado */
+.logo-container {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+
+.logo-img {
+    height: clamp(40px, 8vw, 80px); /* antes era demasiado grande */
+    width: auto;
+    filter: drop-shadow(0 0 10px #0ff);
+}
+
+/* Responsive para el logo */
+@media (max-width: 768px) {
+    .logo-img {
+        height: 35px;
+    }
+}
+
+/* Formularios gamer */
+.formulario {
+    max-width: 500px;
+    margin: 40px auto;
+    background: rgba(20,20,20,0.9);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00f0ff;
+    color: #fff;
+}
+
+.formulario label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #0ff;
+    text-align: left;
+}
+
+.formulario input, 
+.formulario textarea, 
+.formulario select, 
+.configuracion select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 2px solid #7928ca;
+    border-radius: 8px;
+    background: #111;
+    color: #fff;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    font-size: 16px;
+}
+
+/* Feedback visual gamer */
+.formulario input:valid, 
+.formulario textarea:valid, 
+.formulario select:valid {
+    border-color: #00ff99; /* verde neón si está correcto */
+    box-shadow: 0 0 8px #00ff99;
+}
+.formulario input:invalid, 
+.formulario textarea:invalid, 
+.formulario select:invalid {
+    border-color: #ff0040; /* rojo gamer si falta algo */
+    box-shadow: 0 0 8px #ff0040;
+}
+
+/* Botón del formulario */
+.formulario button {
+    margin-top: 20px;
+    padding: 14px 35px;
+    background: linear-gradient(90deg, #ff0080, #00f0ff);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 15px #00f0ff;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.formulario button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #ff0080;
+}
+.quiz-img {
+    max-width: 150px;   /* límite máximo más chico */
+    height: auto;       /* mantiene proporción */
+    margin-top: 10px;
+    border-radius: 12px; /* esquinas redondeadas gamer */
+    box-shadow: 0 0 15px #ff0080; /* glow neón */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.quiz-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 25px #00f0ff;
+}
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Inicio - Preguntados Web</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+        <img src="img/logo.png" alt="Logo Preguntados Web" class="logo-img">
+        </div>
+        <h1>Preguntados 🎯</h1>
+        <nav>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="preguntados.html">Quiz</a>
+            <a href="formulario.html">Formulario</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <!-- Hero principal -->
+        <section class="hero">
+            <h2>¡Pon a prueba tus conocimientos!</h2>
+            <p>Explora distintas categorías y desafía tu mente con nuestro quiz interactivo.</p>
+            <button onclick="location.href='preguntados.html'">Comenzar Quiz</button>
+        </section>
+
+        <!-- Features -->
+        <section class="features">
+            <div class="feature">
+                <h3>🎮 Diversión asegurada</h3>
+                <p>Preguntas variadas para que nunca te aburras.</p>
+            </div>
+            <div class="feature">
+                <h3>📚 Aprende jugando</h3>
+                <p>Refuerza tus conocimientos mientras te diviertes.</p>
+            </div>
+            <div class="feature">
+                <h3>🏆 Compite</h3>
+                <p>Supera tu puntuación y reta a tus amigos.</p>
+            </div>
+        </section>
+
+        <!-- Carrusel -->
+        <section class="carousel">
+            <h4>🌟 Categorías destacadas</h4>
+            <div class="carousel-container">
+                <div class="slide">
+                    <img src="img/cultura general.png" alt="Cultura General">
+                    <p>Cultura General</p>
+                </div>
+                <div class="slide">
+                    <img src="img/deportes.png" alt="Deportes">
+                    <p>Deportes</p>
+                </div>
+                <div class="slide">
+                    <img src="img/matematicas.png" alt="Matemáticas">
+                    <p>Matemáticas</p>
+                </div>
+                <div class="slide">
+                    <img src="img/geografia.png" alt="Geografía">
+                    <p>Geografía</p>
+                </div>
+                <div class="slide">
+                    <img src="img/ciencia.png" alt="Ciencia">
+                    <p>Ciencia</p>
+                </div>
+                <div class="slide">
+                    <img src="img/musica.png" alt="Música">
+                    <p>Música</p>
+                </div>
+                <div class="slide">
+                    <img src="img/peliculas.png" alt="Películas">
+                    <p>Películas</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+    <p>© 2026 Preguntados Web | Creado por Cardozo</p>
+    <p>Síguenos en redes:
+        <a href="https://www.instagram.com/preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/@Preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+    </p>
+</footer>
+
+    <!-- movimiento automático del carrusel -->
+    <script>
+        const carrusel = document.querySelector('.carousel-container');
+        let scrollPos = 0;
+
+        setInterval(() => {
+            scrollPos += 200;
+            if (scrollPos >= carrusel.scrollWidth) scrollPos = 0;
+            carrusel.scrollTo({ left: scrollPos, behavior: 'smooth' });
+        }, 3000);
+    </script>
+    <script>
+    const links = document.querySelectorAll("nav a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+</script>
+</body>
+
+</html>

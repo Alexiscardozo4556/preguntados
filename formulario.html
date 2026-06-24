@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario de Opinión</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+        <img src="img/logo.png" alt="Logo Preguntados Web" class="logo-img">
+        </div>
+        <h1>Preguntados 🎯</h1>
+        <nav>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="preguntados.html">Quiz</a>
+            <a href="formulario.html">Formulario</a>
+        </nav>
+    </header>
+
+
+    <main>
+        <form id="feedbackForm" class="formulario">
+            <label for="nombre"><i class="fa fa-user"></i> Nombre:</label>
+            <input type="text" id="nombre" required placeholder="Tu nombre completo">
+
+            <label for="email"><i class="fa fa-envelope"></i> Correo electrónico:</label>
+            <input type="email" id="email" required placeholder="ejemplo@correo.com">
+
+            <label for="edad"><i class="fa fa-calendar"></i> Edad:</label>
+            <input type="number" id="edad" min="10" max="100" required>
+
+            <label for="categoria"><i class="fa fa-list"></i> Categoría:</label>
+            <select id="categoria" required>
+                <option value="">Selecciona una opción</option>
+                <option value="sugerencia">Sugerencia</option>
+                <option value="error">Reportar error</option>
+                <option value="diseño">Mejorar diseño</option>
+                <option value="contenido">Contenido</option>
+            </select>
+
+            <label for="comentario"><i class="fa fa-comment"></i> Comentario:</label>
+            <textarea id="comentario" rows="5" required placeholder="Escribe tu opinión aquí..."></textarea>
+
+            <label>
+                <input type="checkbox" id="suscripcion"> Quiero recibir novedades por correo
+            </label>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p id="confirmacion"></p>
+    </main>
+
+    <footer>
+        <p>© 2026 Preguntados Web | Creado por Cardozo</p>
+        <p>Síguenos en redes:
+            <a href="https://www.instagram.com/preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/@Preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        </p>
+    </footer>
+<script>
+    document.getElementById("feedbackForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const nombre = document.getElementById("nombre").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const edad = parseInt(document.getElementById("edad").value.trim(), 16);
+        const categoria = document.getElementById("categoria").value;
+        const comentario = document.getElementById("comentario").value.trim();
+
+        // 👉 Validaciones
+        if (!nombre || !email || !edad || !categoria || !comentario) {
+            Swal.fire("Campos incompletos", "Por favor completa todos los campos", "warning");
+            return;
+        }
+
+        if (edad < 16) {
+            Swal.fire({
+                title: "Error",
+                text: "Debes tener al menos 16 años para enviar sugerencias",
+                icon: "error", // 🔴 Mensaje en rojo
+                confirmButtonText: "Entendido"
+            });
+            return;
+        }
+
+        if (edad < 16 || edad > 100) {
+            Swal.fire("Error", "La edad debe estar entre 10 y 100 años.", "error");
+            return;
+        }
+
+        // 👉 Si todo está correcto
+        Swal.fire({
+            title: "¡Gracias!",
+            text: "Tu opinión fue enviada correctamente 🙌",
+            icon: "success",
+            confirmButtonText: "Cerrar"
+        });
+
+        // Limpiar formulario
+        document.getElementById("feedbackForm").reset();
+    });
+</script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="formulario.js"></script>
+    <script>
+    const links = document.querySelectorAll("nav a");
+    const currentPage = window.location.pathname.split("/").pop();
+
+    links.forEach(link => {
+        if (link.getAttribute("href") === currentPage) {
+            link.classList.add("active");
+        } else {
+            link.classList.remove("active");
+        }
+    });
+</script>
+</body>
+
+</html>

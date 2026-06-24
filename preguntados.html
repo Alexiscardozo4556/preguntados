@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Preguntados</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Logo Preguntados Web" class="logo-img">
+        </div>
+        <h1>Preguntados 🎯</h1>
+        <nav>
+            <a href="index.html" class="active">Inicio</a>
+            <a href="preguntados.html">Quiz</a>
+            <a href="formulario.html">Formulario</a>
+        </nav>
+    </header>
+
+    <main class="game-container">
+        <!-- Intro -->
+        <section class="intro">
+            <h2>🧠 ¿Qué es Preguntados Web?</h2>
+            <p>
+                Es un juego interactivo de preguntas y respuestas donde podrás poner a prueba tus conocimientos en
+                distintas categorías: cultura general, deportes, matemáticas, geografía, historia argentina, ciencia,
+                música y películas.
+            </p>
+            <img src="img/quiz.png" alt="Imagen divertida de quiz" class="quiz-img">
+        </section>
+
+        <!-- Configuración -->
+        <section class="configuracion">
+            <h2>⚙️ Configuración del juego</h2>
+            <label for="categoria">🎯 Selecciona tu categoría</label>
+            <select id="categoria">
+                <option value="general">Cultura General🌍</option>
+                <option value="deportes">Deportes⚽</option>
+                <option value="matematicas">Matemáticas➗</option>
+                <option value="geografia">Geografía🗺️</option>
+                <option value="historiaArgentina">Historia Argentina 🇦🇷</option>
+                <option value="ciencia">Ciencia🔬</option>
+                <option value="musica">Música🎵</option>
+                <option value="peliculas">Películas🎬</option>
+                <option value="aleatorio">Aleatorio🎲</option>
+            </select>
+
+            <label for="modo">🎮 Selecciona el modo de juego</label>
+            <select id="modo">
+                <option value="normal">Normal🎯</option>
+                <option value="contrarreloj">Contrarreloj⏱️</option>
+                <option value="supervivencia">Supervivencia❤️</option>
+            </select>
+
+            <button class="start-btn" onclick="redirigirJuego()">🚀 Comenzar</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2026 Preguntados Web | Creado por Cardozo</p>
+        <p>Síguenos en redes:
+            <a href="https://www.instagram.com/preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com/preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.youtube.com/@Preguntados" target="_blank" rel="noopener noreferrer"><i class="fab fa-youtube"></i></a>
+        </p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        const links = document.querySelectorAll("nav a");
+        const currentPage = window.location.pathname.split("/").pop();
+
+        links.forEach(link => {
+            if (link.getAttribute("href") === currentPage) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+
+        function redirigirJuego() {
+            const categoria = document.getElementById("categoria").value;
+            const modo = document.getElementById("modo").value;
+
+            // Guardar selección en localStorage
+            localStorage.setItem("categoriaSeleccionada", categoria);
+            localStorage.setItem("modoSeleccionado", modo);
+
+            // Redirigir a juego.html
+            location.href = "juego.html";
+        }
+    </script>
+</body>
+</html>
